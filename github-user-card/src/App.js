@@ -9,6 +9,7 @@ class App extends React.Component {
     super();
     this.state = {
       data: [],
+      myData: [],
       search: ""
     };
   }
@@ -26,6 +27,14 @@ class App extends React.Component {
         });
       })
       .catch(err => alert(err.message));
+    axios
+      .get("https://api.github.com/users/hammurobbie")
+      .then(res => {
+        this.setState({
+          myData: res.data
+        });
+      })
+      .catch(err => alert(err.message));
   }
 
   render() {
@@ -38,6 +47,7 @@ class App extends React.Component {
           key={this.state.data.index}
           data={this.state.data}
           search={this.state.search}
+          myData={this.state.myData}
         />
       </div>
     );

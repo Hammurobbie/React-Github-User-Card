@@ -18,15 +18,17 @@ const H2 = styled.h2`
 class Card extends React.Component {
   render() {
     return (
-      <CardDiv>
-        <H2>{this.props.data.login}</H2>
-        <img src={this.props.data.avatar_url} alt="User Avatar" />
-        <p>
-          <a target="blank_" href={this.props.data.html_url}>
-            {this.props.data.html_url}
-          </a>
-        </p>
-      </CardDiv>
+      <div>
+        <CardDiv>
+          <H2>{this.props.data.login}</H2>
+          <img src={this.props.data.avatar_url} alt="User Avatar" />
+          <p>
+            <a target="blank_" href={this.props.data.html_url}>
+              {this.props.data.html_url}
+            </a>
+          </p>
+        </CardDiv>
+      </div>
     );
   }
 }
